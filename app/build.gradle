@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    // Kod paket adı (sınıflar) aynı kalır; yüklenen uygulamanın kimliği (applicationId) yenidir.
+    // Böylece eski "WR LowLatency Overlay" ile yan yana kurulabilir, imza çakışması olmaz.
+    namespace 'com.wildrift.overlay'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.pulselink.stream"
+        minSdk 26
+        targetSdk 34
+        versionCode 2
+        versionName "2.0"
+    }
+
+    signingConfigs {
+        release {
+            // Kişisel/yan yükleme için üretilmiş sabit anahtar: sonraki sürümler üstüne güncellenebilir.
+            storeFile file("../pulselink.keystore")
+            storePassword "pulselink123"
+            keyAlias "pulselink"
+            keyPassword "pulselink123"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'io.getstream:stream-webrtc-android:1.1.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+}

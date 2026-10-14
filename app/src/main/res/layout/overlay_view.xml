@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/videoRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:background="#00000000">
+
+    <!-- 19.5:9 Samsung RTL Video Akışı (Merkezde sabit) -->
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/videoRenderer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+    <!-- Siyah boşlukta duran HUD (Kırpılmayan, doğrudan RelativeLayout içinde) -->
+    <TextView
+        android:id="@+id/tvStaticHud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:rotation="90"
+        android:singleLine="true"
+        android:ellipsize="none"
+        android:text="Bağlanıyor..."
+        android:textColor="#00E676"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:background="#CC111111"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp" />
+
+</RelativeLayout>

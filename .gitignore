@@ -1,0 +1,10 @@
+# Derleme çıktıları ve büyük dosyalar (repoyu şişirmesin)
+build/
+.gradle/
+.idea/
+local.properties
+gradle-8.4/
+node_modules/
+*.apk
+*.aab
+*.zip

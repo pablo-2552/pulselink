@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/floatingRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="start">
+
+    <!-- 1. Küçük Yuvarlak Buton (38dp) -->
+    <FrameLayout
+        android:id="@+id/btnBubble"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="#DD1E1E1E">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="⚙"
+            android:textColor="#00E5FF"
+            android:textSize="16sp" />
+    </FrameLayout>
+
+    <!-- 2. Açılır/Kapanır Detaylı Ayar Menü Kartı -->
+    <LinearLayout
+        android:id="@+id/llSettingsMenu"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#EE121212"
+        android:padding="8dp"
+        android:layout_marginTop="4dp"
+        android:visibility="gone">
+
+        <!-- Gizle / Göster Butonu -->
+        <Button
+            android:id="@+id/btnToggleVisibility"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="👁 YAYINI GİZLE"
+            android:textSize="10sp"
+            android:backgroundTint="#0288D1"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- OTO / MANUEL MOD BUTONU (Sade ve Net) -->
+        <Button
+            android:id="@+id/btnModeToggle"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="MOD: MANUEL"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:backgroundTint="#00C853"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Çözünürlük Seçenekleri -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ÇÖZÜNÜRLÜK:"
+            android:textColor="#AAAAAA"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="3dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <Button
+                android:id="@+id/btnRes720"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="28dp"
+                android:text="720p"
+                android:textSize="9sp"
+                android:backgroundTint="#00C853"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="2dp"/>
+
+            <Button
+                android:id="@+id/btnRes1080"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="28dp"
+                android:text="1080p"
+                android:textSize="9sp"
+                android:backgroundTint="#424242"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="2dp"/>
+
+            <Button
+                android:id="@+id/btnRes540"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="28dp"
+                android:text="540p"
+                android:textSize="9sp"
+                android:backgroundTint="#424242"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <!-- FPS Seçenekleri -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KARE HIZI (FPS):"
+            android:textColor="#AAAAAA"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="3dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <Button
+                android:id="@+id/btnFps45"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="28dp"
+                android:text="45 FPS"
+                android:textSize="9sp"
+                android:backgroundTint="#424242"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="2dp"/>
+
+            <Button
+                android:id="@+id/btnFps60"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="28dp"
+                android:text="60 FPS"
+                android:textSize="9sp"
+                android:backgroundTint="#00C853"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="2dp"/>
+
+            <Button
+                android:id="@+id/btnFps30"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="28dp"
+                android:text="30 FPS"
+                android:textSize="9sp"
+                android:backgroundTint="#424242"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <!-- Ses Aç / Kapat -->
+        <Button
+            android:id="@+id/btnAudioToggle"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="🔊 SES: AÇIK"
+            android:textSize="9sp"
+            android:backgroundTint="#00C853"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Gösterge (HUD) Aç / Kapat -->
+        <Button
+            android:id="@+id/btnHudToggle"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="📊 GÖSTERGE: AÇIK"
+            android:textSize="9sp"
+            android:backgroundTint="#00C853"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Gelişmiş: titreme / gecikme / bant ayarları -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GELİŞMİŞ:"
+            android:textColor="#AAAAAA"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="3dp"/>
+
+        <Button
+            android:id="@+id/btnPacer"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="AKICILIK: KAPALI"
+            android:textSize="9sp"
+            android:backgroundTint="#424242"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="3dp"/>
+
+        <Button
+            android:id="@+id/btnEncoder"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="KODLAYICI: HIZLI"
+            android:textSize="9sp"
+            android:backgroundTint="#00C853"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="3dp"/>
+
+        <Button
+            android:id="@+id/btnBandwidth"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="BANT SINIRI: %100"
+            android:textSize="9sp"
+            android:backgroundTint="#424242"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Kapat Butonu -->
+        <Button
+            android:id="@+id/btnMenuClose"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="✕ KATMANI KAPAT"
+            android:textSize="9sp"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+</LinearLayout>
